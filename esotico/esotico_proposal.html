@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Esotico × Sanghamitra Media — Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --sm-gold:#F5A800;--sm-blue:#1E6FBF;--sm-cyan:#29ABE2;
+  --sm-black:#0A0A0A;--sm-navy:#0D1F2D;--sm-cream:#FAF8F4;
+  --sm-text:#1A2E3A;--sm-muted:#5A7A8A;--sm-border:#E0E8F0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--sm-text);background:var(--sm-cream);}
+h1,h2,h3,.display{font-family:'Playfair Display',serif;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(245,168,0,0.2);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:36px;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:#ccc;text-decoration:none;font-size:13px;font-weight:500;cursor:pointer;transition:color .2s;}
+.nav-links a:hover{color:var(--sm-gold);}
+.nav-cta{background:var(--sm-gold);color:var(--sm-black);border:none;padding:8px 20px;font-weight:600;font-size:13px;border-radius:4px;cursor:pointer;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--sm-black) 0%,var(--sm-navy) 60%,#0d2a1f 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(245,168,0,0.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(41,171,226,0.06) 0%,transparent 50%);}
+.hero-badge{display:inline-block;background:rgba(245,168,0,0.1);border:1px solid rgba(245,168,0,0.4);color:var(--sm-gold);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:20px;}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero h1 span{color:var(--sm-gold);}
+.hero-sub{color:var(--sm-cyan);font-size:1rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+.hero-desc{color:#aab8c2;font-size:1rem;max-width:560px;margin:0 auto 36px;line-height:1.7;}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.hero-stat{text-align:center;}
+.hero-stat .num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--sm-gold);font-weight:700;}
+.hero-stat .lbl{font-size:11px;color:#7a9aaa;text-transform:uppercase;letter-spacing:1px;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:var(--sm-gold);color:var(--sm-black);padding:13px 28px;border:none;font-weight:700;font-size:14px;border-radius:4px;cursor:pointer;transition:transform .2s,opacity .2s;}
+.btn-gold:hover{transform:translateY(-2px);opacity:.9;}
+.btn-outline{background:transparent;color:var(--sm-cyan);padding:13px 28px;border:2px solid var(--sm-cyan);font-weight:600;font-size:14px;border-radius:4px;cursor:pointer;transition:background .2s,color .2s;}
+.btn-outline:hover{background:var(--sm-cyan);color:#fff;}
+
+/* SECTIONS */
+section{padding:80px 5%;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sm-gold);margin-bottom:10px;}
+.section-title{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--sm-navy);margin-bottom:14px;}
+.section-sub{color:var(--sm-muted);max-width:540px;line-height:1.7;margin-bottom:50px;}
+
+/* PROBLEM */
+.problem{background:var(--sm-navy);}
+.problem .section-title{color:#fff;}
+.problem .section-sub{color:#7a9aaa;}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(245,168,0,0.15);border-radius:12px;padding:28px;transition:border-color .3s,transform .3s;}
+.card:hover{border-color:var(--sm-gold);transform:translateY(-4px);}
+.card-icon{font-size:2rem;margin-bottom:14px;}
+.card h3{color:#fff;font-size:1rem;margin-bottom:8px;}
+.card p{color:#7a9aaa;font-size:.9rem;line-height:1.6;}
+
+/* APPROACH */
+.approach{background:var(--sm-cream);}
+.approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.approach-card{background:#fff;border:1px solid var(--sm-border);border-radius:12px;padding:28px;border-left:4px solid var(--sm-gold);}
+.approach-card h3{color:var(--sm-navy);font-size:1rem;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.approach-card p{color:var(--sm-muted);font-size:.9rem;line-height:1.6;}
+
+/* ROADMAP */
+.roadmap{background:#fff;}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:10px;}
+.tcard{background:var(--sm-cream);border-radius:12px;padding:24px;border-top:3px solid var(--sm-gold);position:relative;}
+.tcard .month{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--sm-cyan);text-transform:uppercase;margin-bottom:8px;}
+.tcard h3{color:var(--sm-navy);font-size:.95rem;margin-bottom:10px;}
+.tcard ul{list-style:none;padding:0;}
+.tcard ul li{font-size:.83rem;color:var(--sm-muted);padding:3px 0;padding-left:14px;position:relative;}
+.tcard ul li::before{content:'→';position:absolute;left:0;color:var(--sm-gold);font-size:.75rem;}
+
+/* SERVICES */
+.services{background:var(--sm-navy);}
+.services .section-title{color:#fff;}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
+.tab-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#aaa;padding:8px 16px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;}
+.tab-btn.active,.tab-btn:hover{background:var(--sm-gold);color:var(--sm-black);border-color:var(--sm-gold);font-weight:600;}
+.tab-pane{display:none;}
+.tab-pane.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.svc-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;}
+.svc-item h4{color:var(--sm-gold);font-size:.9rem;margin-bottom:6px;}
+.svc-item p{color:#8a9eaa;font-size:.82rem;line-height:1.5;}
+
+/* RESULTS */
+.results{background:var(--sm-cream);}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:24px;}
+.stat-card{background:#fff;border:1px solid var(--sm-border);border-radius:12px;padding:28px;text-align:center;}
+.stat-card .big{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--sm-gold);font-weight:700;}
+.stat-card p{font-size:.85rem;color:var(--sm-muted);margin-top:6px;}
+.disclaimer{font-size:.8rem;color:var(--sm-muted);font-style:italic;background:#fff;border-left:3px solid var(--sm-gold);padding:14px 18px;border-radius:4px;}
+
+/* CLIENTS */
+.clients{background:#fff;}
+.filter-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
+.filter-btn{background:var(--sm-cream);border:1px solid var(--sm-border);color:var(--sm-muted);padding:7px 14px;border-radius:20px;font-size:12px;cursor:pointer;transition:all .2s;}
+.filter-btn.active,.filter-btn:hover{background:var(--sm-navy);color:#fff;border-color:var(--sm-navy);}
+.clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.client-card{background:var(--sm-cream);border:1px solid var(--sm-border);border-radius:10px;padding:22px;transition:transform .2s;}
+.client-card:hover{transform:translateY(-3px);}
+.client-card h4{color:var(--sm-navy);font-size:.95rem;margin-bottom:6px;}
+.client-card p{color:var(--sm-muted);font-size:.82rem;line-height:1.5;margin-bottom:10px;}
+.client-card a{font-size:.8rem;color:var(--sm-blue);text-decoration:none;}
+.client-card a:hover{text-decoration:underline;}
+
+/* ABOUT */
+.about{background:var(--sm-navy);}
+.about .section-title{color:#fff;}
+.about .section-sub{color:#7a9aaa;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.pillar{background:rgba(255,255,255,0.04);border:1px solid rgba(245,168,0,0.15);border-radius:10px;padding:20px;margin-bottom:16px;}
+.pillar h4{color:var(--sm-gold);font-size:.9rem;margin-bottom:6px;}
+.pillar p{color:#8a9eaa;font-size:.85rem;line-height:1.5;}
+.offices{margin-top:24px;}
+.offices h4{color:var(--sm-cyan);font-size:.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.office-list{list-style:none;}
+.office-list li{color:#aab8c2;font-size:.88rem;padding:4px 0;padding-left:16px;position:relative;}
+.office-list li::before{content:'●';position:absolute;left:0;color:var(--sm-gold);font-size:.5rem;top:8px;}
+
+/* PRICING */
+.pricing{background:var(--sm-cream);}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;}
+.price-card{background:#fff;border:2px solid var(--sm-border);border-radius:16px;padding:36px;text-align:center;}
+.price-card.featured{border-color:var(--sm-gold);box-shadow:0 8px 40px rgba(245,168,0,0.12);}
+.price-badge{background:var(--sm-gold);color:var(--sm-black);font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:10px;text-transform:uppercase;display:inline-block;margin-bottom:16px;}
+.price-card h3{font-size:1.2rem;color:var(--sm-navy);margin-bottom:8px;}
+.price-card .amount{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--sm-gold);font-weight:700;margin:12px 0 4px;}
+.price-card .per{font-size:.82rem;color:var(--sm-muted);margin-bottom:20px;}
+.price-card ul{list-style:none;text-align:left;margin-bottom:24px;}
+.price-card ul li{font-size:.86rem;color:var(--sm-muted);padding:6px 0;border-bottom:1px solid var(--sm-border);padding-left:20px;position:relative;}
+.price-card ul li::before{content:'✓';position:absolute;left:0;color:var(--sm-gold);font-weight:700;}
+.price-note{font-size:.8rem;color:var(--sm-muted);font-style:italic;margin-top:8px;}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,var(--sm-black),var(--sm-navy));text-align:center;padding:80px 5%;}
+.cta-section h2{color:#fff;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:14px;}
+.cta-section p{color:#8a9eaa;margin-bottom:36px;font-size:1rem;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-wa{background:#25D366;color:#fff;padding:14px 32px;border:none;border-radius:4px;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:opacity .2s;}
+.btn-wa:hover{opacity:.85;}
+.btn-email{background:transparent;color:var(--sm-cyan);padding:14px 32px;border:2px solid var(--sm-cyan);border-radius:4px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;}
+.btn-email:hover{background:var(--sm-cyan);color:#fff;}
+
+/* FOOTER */
+footer{background:var(--sm-black);padding:36px 5%;text-align:center;border-top:1px solid rgba(245,168,0,0.2);}
+footer img{height:32px;margin-bottom:12px;}
+footer p{color:#555;font-size:.82rem;}
+footer a{color:var(--sm-muted);text-decoration:none;margin:0 8px;font-size:.8rem;}
+footer a:hover{color:var(--sm-gold);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:20px;}
+  .hero-scroll{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" alt="Sanghamitra Media"/>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="smScrollTo('problem')">The Gap</a></li>
+    <li><a onclick="smScrollTo('approach')">Approach</a></li>
+    <li><a onclick="smScrollTo('roadmap')">Roadmap</a></li>
+    <li><a onclick="smScrollTo('pricing')">Pricing</a></li>
+    <li><a onclick="smScrollTo('about')">About</a></li>
+  </ul>
+  <button class="nav-cta" onclick="smScrollTo('cta')">Let's Talk</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div style="position:relative;z-index:1;max-width:720px;">
+    <div class="hero-badge">✦ Exclusively Prepared For</div>
+    <h1>Esotico<br/><span>× Sanghamitra Media</span></h1>
+    <div class="hero-sub">Chocolatier · Baker · Customised Creations · Hyderabad</div>
+    <p class="hero-desc">Madhu, your creations deserve an audience as beautiful as the boxes you craft. Let's turn Esotico into Hyderabad's most-loved homemade chocolate brand — one reel at a time.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">50+</div><div class="lbl">Brands Grown</div></div>
+      <div class="hero-stat"><div class="num">6</div><div class="lbl">Month Roadmap</div></div>
+      <div class="hero-stat"><div class="num">1K→20K</div><div class="lbl">Follower Growth</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">Instagram Focus</div></div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="smScrollTo('pricing')">View Your Plan</button>
+      <button class="btn-outline" onclick="smScrollTo('roadmap')">See the Roadmap</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem reveal" id="problem">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">The Gap</p>
+    <h2 class="section-title" style="color:#fff;">Why incredible products stay hidden</h2>
+    <p class="section-sub">Great chocolate and beautiful cakes deserve to be seen. Here's what's standing between Esotico and a full order book.</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">📸</div><h3>No consistent visual presence</h3><p>Handcrafted products live and die by visuals. Without a steady feed of mouth-watering reels and posts, potential buyers scroll past — every day.</p></div>
+      <div class="card"><div class="card-icon">🎂</div><h3>Seasonal spikes, no steady demand</h3><p>Orders peak at Diwali, Valentine's Day, Christmas — but between festivals, revenue dips. A strategic content calendar builds year-round appetite.</p></div>
+      <div class="card"><div class="card-icon">🔍</div><h3>Invisible to Hyderabad's gifting crowd</h3><p>People searching for premium customised chocolates and cakes in Hyderabad aren't finding Esotico — they're finding whoever shows up on Instagram first.</p></div>
+      <div class="card"><div class="card-icon">💬</div><h3>No brand story being told</h3><p>The "homemade by Madhu" story is Esotico's biggest asset. Without content that shares the heart, craft, and care behind each creation, it's just another product account.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach reveal" id="approach">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Our Approach</p>
+    <h2 class="section-title">Built around Instagram — and you</h2>
+    <p class="section-sub">This isn't a copy-paste plan. Every piece of content is crafted around Esotico's personality, Madhu's story, and Hyderabad's appetite for artisan gifting.</p>
+    <div class="approach-grid">
+      <div class="approach-card"><h3>🎬 Professional shoots in Month 1</h3><p>Our photographer comes to your kitchen/studio in Hyderabad and shoots ~15 high-quality reels — product showcases, process videos, packaging reveals. Real, authentic, beautiful.</p></div>
+      <div class="approach-card"><h3>📲 We teach you to create from Month 2</h3><p>From Month 2, we guide you on filming your own content — simple, phone-based techniques that look professional. We handle all editing, so you just create and we polish.</p></div>
+      <div class="approach-card"><h3>✨ Storytelling, not just selling</h3><p>Behind-the-scenes of making a hamper, the story of a customised cake order, the joy of gifting — we build emotional content that creates loyal fans, not just customers.</p></div>
+      <div class="approach-card"><h3>📅 Full page management</h3><p>Posters, stories, highlights, captions, hashtags, scheduling — every detail of your Instagram is handled. You focus on the kitchen. We handle the gram.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap reveal" id="roadmap">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">6-Month Roadmap</p>
+    <h2 class="section-title">From hidden gem to Hyderabad's favourite</h2>
+    <p class="section-sub">A month-by-month plan tailored to Esotico's launch phase, seasonal peaks, and growth milestones.</p>
+    <div class="timeline">
+      <div class="tcard"><div class="month">Month 1</div><h3>Launch Foundation</h3><ul><li>Professional photo/reel shoot at location (~15 reels)</li><li>Profile optimisation & bio rewrite</li><li>Highlight covers & brand templates</li><li>Pinned intro reel — Madhu's story</li></ul></div>
+      <div class="tcard"><div class="month">Month 2</div><h3>Content Engine On</h3><ul><li>Phone filming guidance for Madhu</li><li>Repurpose Month 1 footage smartly</li><li>Product-showcase carousels launch</li><li>Stories + polls for engagement</li></ul></div>
+      <div class="tcard"><div class="month">Month 3</div><h3>Community & Reach</h3><ul><li>Festive campaign calendar built</li><li>Behind-the-scenes reel series</li><li>Hashtag strategy refined</li><li>First batch of DM inquiry content</li></ul></div>
+      <div class="tcard"><div class="month">Month 4</div><h3>Trust & Authority</h3><ul><li>Customer gifting stories content</li><li>Order process + packaging reels</li><li>Seasonal campaign execution</li><li>Engagement growth focus</li></ul></div>
+      <div class="tcard"><div class="month">Month 5</div><h3>Scale & Collaborate</h3><ul><li>Gifting season push (if festive)</li><li>Explore micro-influencer gifting</li><li>New product launch content</li><li>Instagram Highlights refresh</li></ul></div>
+      <div class="tcard"><div class="month">Month 6</div><h3>Brand Milestone</h3><ul><li>Review & performance analysis</li><li>Content asset library built</li><li>Growth report & next phase plan</li><li>Discuss website creation roadmap</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services reveal" id="services">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label" style="color:var(--sm-cyan);">What's Included</p>
+    <h2 class="section-title" style="color:#fff;">Everything your Instagram needs</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('content')">Content</button>
+      <button class="tab-btn" onclick="switchTab('visuals')">Visuals</button>
+      <button class="tab-btn" onclick="switchTab('management')">Management</button>
+      <button class="tab-btn" onclick="switchTab('strategy')">Strategy</button>
+      <button class="tab-btn" onclick="switchTab('reporting')">Reporting</button>
+    </div>
+    <div id="content" class="tab-pane active">
+      <div class="svc-item"><h4>Monthly Content Calendar</h4><p>Planned posts, reels, and stories mapped to seasons, festivals, and Esotico's product range.</p></div>
+      <div class="svc-item"><h4>Caption & Copy Writing</h4><p>Brand-voice captions — warm, personal, appetite-inducing — with strong CTAs to drive DMs.</p></div>
+      <div class="svc-item"><h4>Reel Concepts & Scripts</h4><p>Trending reel formats adapted for artisan food — hooks, transitions, storytelling arcs.</p></div>
+    </div>
+    <div id="visuals" class="tab-pane">
+      <div class="svc-item"><h4>Month 1 Pro Shoot (~15 Reels)</h4><p>Photographer at your location. Product reels, process videos, packaging reveals, lifestyle shots.</p></div>
+      <div class="svc-item"><h4>Full Video Editing</h4><p>All footage — whether shot by the photographer or you on your phone — edited professionally with branding, subtitles, music, and transitions.</p></div>
+      <div class="svc-item"><h4>Posters & Carousel Design</h4><p>Branded static posts, story templates, promotional posters, and educational carousels.</p></div>
+    </div>
+    <div id="management" class="tab-pane">
+      <div class="svc-item"><h4>Daily Posting & Scheduling</h4><p>Consistent posting schedule maintained — reels, stories, carousels — timed for best reach.</p></div>
+      <div class="svc-item"><h4>Story Posting & Highlights</h4><p>Daily stories for engagement + highlight organisation by category (chocolates, cakes, hampers, process, reviews).</p></div>
+      <div class="svc-item"><h4>Profile Optimisation</h4><p>Bio, link-in-bio, highlights covers, pinned posts — all optimised for first-impression impact.</p></div>
+    </div>
+    <div id="strategy" class="tab-pane">
+      <div class="svc-item"><h4>Hashtag Strategy</h4><p>Hyderabad-specific + niche artisan food hashtags researched and rotated monthly for discovery.</p></div>
+      <div class="svc-item"><h4>Content Mix Strategy</h4><p>The right balance of promotional, educational, behind-the-scenes, and personal story content.</p></div>
+      <div class="svc-item"><h4>Seasonal Campaign Planning</h4><p>Diwali, Valentine's, Christmas, Raksha Bandhan — campaign hooks planned months in advance.</p></div>
+    </div>
+    <div id="reporting" class="tab-pane">
+      <div class="svc-item"><h4>Monthly Performance Report</h4><p>Reach, engagement, follower growth, best-performing content — with recommendations for the next month.</p></div>
+      <div class="svc-item"><h4>Content Review Calls</h4><p>Monthly check-in to review what's working, adjust the strategy, and plan upcoming campaigns.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results reveal" id="results">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Past Results</p>
+    <h2 class="section-title">What consistent content can do</h2>
+    <p class="section-sub">From service businesses similar to Esotico — artisan, personal brand, and F&B accounts we've grown.</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="big">1K→20K</div><p>Follower growth achieved within 6 months for a service-based personal brand</p></div>
+      <div class="stat-card"><div class="big">5–10/day</div><p>Daily DM inquiries achieved for a local artisan/service business within 8 months</p></div>
+      <div class="stat-card"><div class="big">3 Months</div><p>Average time to establish recognisable brand identity and consistent engagement</p></div>
+      <div class="stat-card"><div class="big">New Revenue</div><p>Clients created new income streams (gift hampers, online orders, festival packages)</p></div>
+    </div>
+    <p class="disclaimer">Results shown are from specific past clients. Every brand is unique — timelines vary based on market, specialty, consistency, and starting point. What we guarantee is the quality of work and execution, every month.</p>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients reveal" id="clients">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Brands we've grown</h2>
+    <p class="section-sub">A cross-section of the brands and entrepreneurs we've built Instagram presences for — across food, lifestyle, fashion, fitness, and personal brands in India and globally.</p>
+    <div class="filter-btns">
+      <button class="filter-btn active" onclick="filterClients('all')">All</button>
+      <button class="filter-btn" onclick="filterClients('fnb')">Food & Lifestyle</button>
+      <button class="filter-btn" onclick="filterClients('fashion')">Fashion & Retail</button>
+      <button class="filter-btn" onclick="filterClients('personal')">Personal Brand</button>
+    </div>
+    <div class="clients-grid" id="clientsGrid">
+      <div class="client-card" data-cat="fnb"><h4>Artisan Food Brands — Hyderabad</h4><p>Multiple homemade and small-batch food brands in Hyderabad grown from scratch. Reel-first strategy, festive campaigns, and story engagement drove consistent DM orders.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+      <div class="client-card" data-cat="fnb"><h4>Gifting & Hamper Brands</h4><p>Customised gifting labels built around seasonal peaks — Diwali, Valentine's, Christmas. Content calendars planned months ahead to capture demand windows.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+      <div class="client-card" data-cat="fashion"><h4>Fashion & Lifestyle Labels</h4><p>Boutique clothing and accessories brands styled with aesthetic Instagram feeds, product drop campaigns, and influencer gifting strategies across Hyderabad and Mumbai.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+      <div class="client-card" data-cat="personal"><h4>Women Entrepreneurs & Personal Brands</h4><p>We have a strong track record helping women-led small businesses build their personal brand alongside their product brand — authentic storytelling, community building, and DM-driven sales.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+      <div class="client-card" data-cat="personal"><h4>50+ Clients Across India, UK & US</h4><p>From solo founders to multi-branch chains — our portfolio spans industries, cities, and growth stages. Every brand gets a strategy built around their unique audience.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+      <div class="client-card" data-cat="fnb"><h4>Bakery & Home Kitchen Brands</h4><p>Built Instagram identities for homemade bakeries and cloud kitchens. Process reels, behind-the-scenes content, and packaging reveals consistently outperformed product-only posts.</p><a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View full portfolio ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about reveal" id="about">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label" style="color:var(--sm-cyan);">About Us</p>
+    <h2 class="section-title">Sanghamitra Media</h2>
+    <p class="section-sub">"The algorithm changes. Human psychology doesn't." — We build brands that connect, not just accounts that post.</p>
+    <div class="about-grid">
+      <div>
+        <div class="pillar"><h4>🎯 Strategy-First</h4><p>Every post, reel, and story has a purpose. We don't create content for vanity metrics — we create for growth, trust, and inquiry.</p></div>
+        <div class="pillar"><h4>🤝 Partner, Not Vendor</h4><p>We work as an extension of your brand. Especially for small and growing entrepreneurs, we invest in your story as much as you do.</p></div>
+        <div class="pillar"><h4>✨ Craft Over Quantity</h4><p>We believe 12 exceptional pieces of content outperform 30 mediocre ones. Quality execution, every month.</p></div>
+        <div class="offices">
+          <h4>Our Offices</h4>
+          <ul class="office-list">
+            <li>Mumbai — Head Office</li>
+            <li>Hyderabad — Office</li>
+            <li>Visakhapatnam — Regional Office</li>
+          </ul>
+          <p style="color:#8a9eaa;font-size:.82rem;margin-top:12px;">Legal entity: Repentino Education Private Limited</p>
+        </div>
+      </div>
+      <div>
+        <div style="background:rgba(245,168,0,0.05);border:1px solid rgba(245,168,0,0.2);border-radius:12px;padding:28px;">
+          <img src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" style="height:44px;margin-bottom:20px;" alt="Sanghamitra Media"/>
+          <p style="color:#aab8c2;font-size:.9rem;line-height:1.7;margin-bottom:20px;">A full-service digital marketing agency with 50+ clients across India, UK, and US. We specialise in Instagram-first growth for personal brands, artisan businesses, and service providers.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
+            <p style="color:var(--sm-gold);font-size:.85rem;font-weight:600;margin-bottom:8px;">Get in touch</p>
+            <p style="color:#aab8c2;font-size:.85rem;">📧 proposal@sanghamitramedia.com</p>
+            <p style="color:#aab8c2;font-size:.85rem;">📞 +91 81213 50865</p>
+            <p style="color:#aab8c2;font-size:.85rem;">📞 +91 95814 65219</p>
+            <a href="https://sanghamitramedia.com" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;color:var(--sm-cyan);font-size:.85rem;text-decoration:none;">🌐 sanghamitramedia.com ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing reveal" id="pricing">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <p class="section-label">Your Plan</p>
+    <h2 class="section-title">Tailored for Esotico</h2>
+    <p class="section-sub" style="margin:0 auto 40px;">A custom plan built for a growing homemade artisan brand — professional launch, then sustainable execution.</p>
+    <div class="price-grid">
+      <div class="price-card featured">
+        <div class="price-badge">Month 1 — Launch</div>
+        <h3>Instagram Launch Package</h3>
+        <div class="amount">₹35,000</div>
+        <div class="per">one-time · first month only</div>
+        <ul>
+          <li>Photographer at your Hyderabad location</li>
+          <li>~15 professionally shot & edited reels</li>
+          <li>Full profile optimisation & bio rewrite</li>
+          <li>Highlight covers & story templates</li>
+          <li>1 month of complete page management</li>
+          <li>Posters, carousels & story posts</li>
+          <li>Caption writing & hashtag strategy</li>
+          <li>Content calendar for Month 2</li>
+        </ul>
+        <p class="price-note">Foundation month — sets the visual identity for everything that follows.</p>
+      </div>
+      <div class="price-card">
+        <div class="price-badge" style="background:var(--sm-cyan);color:#fff;">Month 2 Onwards</div>
+        <h3>Monthly Instagram Maintenance</h3>
+        <div class="amount">₹15,000</div>
+        <div class="per">per month · ongoing</div>
+        <ul>
+          <li>Phone filming guidance for Madhu</li>
+          <li>Full editing of all footage shot by you</li>
+          <li>Repurposing of Month 1 photographer content</li>
+          <li>Posters, stories & carousels</li>
+          <li>Complete page scheduling & management</li>
+          <li>Caption writing & hashtag management</li>
+          <li>Monthly performance report</li>
+          <li>Option to call photographer again when needed</li>
+        </ul>
+        <p class="price-note">Sustainable, affordable, and fully managed — you bake, we build the brand.</p>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--sm-muted);margin-top:20px;font-style:italic;">Payment due 1st week of each month. Minimum commitment: 6 months (Month 1 + 5 maintenance months).</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <h2>Ready to put Esotico on the map, Madhu?</h2>
+  <p>Your chocolates and cakes deserve a following as sweet as what's inside the box. Let's make it happen.</p>
+  <div class="cta-btns">
+    <button class="btn-wa" onclick="window.open('https://wa.me/918121350865?text=Hi%2C%20I%27m%20Madhu%20from%20Esotico.%20I%20reviewed%20the%20proposal%20and%20would%20like%20to%20discuss%20moving%20forward.','_blank')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </button>
+    <button class="btn-email" onclick="window.location.href='mailto:proposal@sanghamitramedia.com?subject=Esotico%20Proposal%20Discussion'">
+      ✉ Email Us
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" alt="Sanghamitra Media"/>
+  <p style="color:var(--sm-gold);font-size:.85rem;margin-bottom:6px;">Exclusively prepared for Esotico · Madhu Agarwal</p>
+  <p style="margin-bottom:12px;">© 2025 Sanghamitra Media · Repentino Education Private Limited</p>
+  <div>
+    <a href="https://sanghamitramedia.com" target="_blank" rel="noopener">Website</a>
+    <a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">Portfolio</a>
+    <a href="https://www.instagram.com/esotico_choc" target="_blank" rel="noopener">Esotico on Instagram</a>
+  </div>
+</footer>
+
+<script>
+function smScrollTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function filterClients(cat){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.client-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+  });
+}
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
