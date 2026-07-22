@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanghamitra Media × MN Scaffolding — Digital Growth Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sm-gold:#F5A800;--sm-blue:#1E6FBF;--sm-cyan:#29ABE2;--sm-black:#0A0A0A;--sm-navy:#0D1F2D;--sm-cream:#FAF8F4;--sm-text:#1A2E3A;--sm-muted:#5A7A8A;--sm-border:#E0E8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:var(--sm-text);background:var(--sm-cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.sec-tag{display:inline-block;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--sm-gold);margin-bottom:14px}
+.sec-title{font-size:clamp(28px,4vw,44px);margin-bottom:16px}
+.sec-sub{color:var(--sm-muted);max-width:680px;margin-bottom:44px;font-size:17px}
+.dark{background:var(--sm-navy);color:#EAF2F8}
+.dark .sec-sub{color:#9DB6C6}
+.dark .sec-title{color:#fff}
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:rgba(10,10,10,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(245,168,0,.18)}
+.nav-in{max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand img{height:38px;filter:brightness(0) invert(1)}
+.nav-brand span{font-family:'Playfair Display',serif;color:#fff;font-size:17px;font-weight:700}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links button{background:none;border:0;color:#C9D9E4;font-family:inherit;font-size:14px;cursor:pointer;padding:4px 0}
+.nav-links button:hover{color:var(--sm-gold)}
+.btn{display:inline-block;border:0;font-family:inherit;font-weight:700;font-size:15px;padding:14px 28px;border-radius:40px;cursor:pointer;transition:.25s;text-decoration:none}
+.btn-gold{background:var(--sm-gold);color:#0A0A0A}
+.btn-gold:hover{background:#ffbe2e;transform:translateY(-2px)}
+.btn-out{background:transparent;color:var(--sm-cyan);border:1.5px solid var(--sm-cyan)}
+.btn-out:hover{background:var(--sm-cyan);color:#06121B}
+.btn-sm{padding:10px 20px;font-size:14px}
+/* HERO */
+.hero{background:linear-gradient(155deg,#0A0A0A 0%,#0D1F2D 60%,#123047 100%);color:#fff;padding:96px 0 84px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(41,171,226,.22),transparent 68%)}
+.badge{display:inline-block;border:1px solid rgba(245,168,0,.5);color:var(--sm-gold);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:26px;font-weight:700}
+.hero h1{font-size:clamp(34px,5.4vw,60px);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--sm-gold)}
+.hero .client{font-size:clamp(20px,2.6vw,26px);color:var(--sm-cyan);font-family:'Playfair Display',serif;margin-bottom:6px}
+.hero .spec{color:#9DB6C6;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:30px}
+.hero p.lead{color:#C9D9E4;max-width:660px;font-size:18px;margin-bottom:34px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:42px 0 34px;position:relative;z-index:2}
+.hstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:20px 16px}
+.hstat b{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--sm-gold);line-height:1}
+.hstat span{font-size:13px;color:#9DB6C6;display:block;margin-top:7px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+.hero-scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#5A7A8A;font-size:12px;letter-spacing:2px}
+/* GRIDS */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--sm-border);border-radius:16px;padding:30px;transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(13,31,45,.09)}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:var(--sm-muted);font-size:15px}
+.num{width:38px;height:38px;border-radius:10px;background:var(--sm-gold);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;font-size:15px}
+.dark .card{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.1)}
+.dark .card h3{color:#fff}
+.dark .card p{color:#9DB6C6}
+/* WHEEL */
+.wheel{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:44px}
+.spoke{text-align:center;padding:26px 14px;border-radius:14px;background:rgba(41,171,226,.08);border:1px solid rgba(41,171,226,.25)}
+.spoke b{display:block;color:var(--sm-cyan);font-size:16px;font-family:'Playfair Display',serif;margin-bottom:5px}
+.spoke span{font-size:13px;color:#9DB6C6}
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tl .card{border-left:3px solid var(--sm-gold)}
+.tl .mth{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sm-gold);font-weight:700;margin-bottom:8px}
+/* TABS */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tab{background:#fff;border:1px solid var(--sm-border);padding:11px 20px;border-radius:30px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:500;color:var(--sm-text)}
+.tab.on{background:var(--sm-navy);color:#fff;border-color:var(--sm-navy)}
+.pane{display:none;background:#fff;border:1px solid var(--sm-border);border-radius:16px;padding:32px}
+.pane.on{display:block}
+.pane ul{list-style:none;columns:2;column-gap:34px}
+.pane li{padding:9px 0 9px 26px;position:relative;font-size:15px;break-inside:avoid}
+.pane li:before{content:"▸";position:absolute;left:0;color:var(--sm-gold);font-weight:700}
+/* STATS */
+.stat{text-align:center;padding:32px 18px;border-radius:16px;background:rgba(245,168,0,.07);border:1px solid rgba(245,168,0,.28)}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:34px;color:var(--sm-gold);line-height:1.1}
+.stat span{font-size:14px;color:#9DB6C6;display:block;margin-top:10px}
+.disclaim{margin-top:26px;font-size:13.5px;color:#8FA9BA;font-style:italic;border-left:2px solid var(--sm-gold);padding-left:16px;max-width:820px}
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.pcard{background:#fff;border:1.5px solid var(--sm-border);border-radius:18px;padding:32px 28px;position:relative}
+.pcard.reco{border-color:var(--sm-gold);box-shadow:0 16px 44px rgba(245,168,0,.16)}
+.reco-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--sm-gold);color:#0A0A0A;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:6px 16px;border-radius:20px;white-space:nowrap}
+.pname{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:4px}
+.pfor{font-size:13px;color:var(--sm-muted);margin-bottom:18px;min-height:38px}
+.ptier{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px dashed var(--sm-border)}
+.ptier:last-of-type{border-bottom:0}
+.ptier .amt{font-family:'Playfair Display',serif;font-size:27px;color:var(--sm-navy);font-weight:700}
+.ptier .lbl{font-size:12.5px;color:var(--sm-muted);text-align:right}
+.pgst{font-size:12px;color:var(--sm-muted);margin:10px 0 18px}
+.plist{list-style:none;margin-bottom:24px}
+.plist li{padding:8px 0 8px 24px;position:relative;font-size:14.5px;border-top:1px solid #F1F5F8}
+.plist li:before{content:"✓";position:absolute;left:0;color:var(--sm-gold);font-weight:700}
+.addons{margin-top:34px;background:#fff;border:1px solid var(--sm-border);border-radius:16px;padding:30px}
+.addons h3{font-size:20px;margin-bottom:8px}
+.addons ul{list-style:none;columns:2;column-gap:34px;margin-top:14px}
+.addons li{padding:7px 0 7px 24px;position:relative;font-size:14.5px;color:var(--sm-muted);break-inside:avoid}
+.addons li:before{content:"+";position:absolute;left:0;color:var(--sm-cyan);font-weight:700}
+/* ABOUT */
+.pill{display:inline-block;background:rgba(41,171,226,.12);color:var(--sm-cyan);border:1px solid rgba(41,171,226,.3);padding:7px 16px;border-radius:20px;font-size:13px;margin:0 8px 8px 0}
+.office{border-top:1px solid rgba(255,255,255,.12);padding:16px 0}
+.office b{color:var(--sm-gold);font-family:'Playfair Display',serif;font-size:17px}
+.office span{display:block;font-size:14px;color:#9DB6C6}
+.about-logo{height:56px;filter:brightness(0) invert(1);margin-bottom:22px}
+/* CTA + FOOTER */
+.cta{background:linear-gradient(140deg,#0A0A0A,#123047);color:#fff;text-align:center}
+.cta h2{font-size:clamp(28px,4vw,42px);color:#fff;margin-bottom:14px}
+.cta p{color:#C9D9E4;max-width:600px;margin:0 auto 32px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.poc{margin-top:30px;font-size:14.5px;color:#9DB6C6}
+.poc b{color:#fff}
+footer{background:var(--sm-black);color:#8FA9BA;padding:44px 0;text-align:center}
+footer img{height:40px;filter:brightness(0) invert(1);margin-bottom:16px}
+footer a{color:var(--sm-cyan);text-decoration:none;margin:0 10px;font-size:14px}
+.excl{color:var(--sm-gold);font-family:'Playfair Display',serif;font-size:17px;margin-bottom:12px}
+.reveal{opacity:0;transform:translateY(26px);transition:.7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.g4,.g3,.tl,.price-grid,.wheel{grid-template-columns:repeat(2,1fr)}.hero-stats{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}
+@media(max-width:640px){.g4,.g3,.g2,.tl,.price-grid,.wheel{grid-template-columns:1fr}.pane ul,.addons ul{columns:1}section{padding:60px 0}}
+@media(max-width:768px){.hero-scroll{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="nav-brand">
+      <img src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" alt="Sanghamitra Media">
+      <span>Sanghamitra Media</span>
+    </div>
+    <ul class="nav-links">
+      <li><button onclick="smScrollTo('problem')">The Gap</button></li>
+      <li><button onclick="smScrollTo('approach')">Approach</button></li>
+      <li><button onclick="smScrollTo('roadmap')">Roadmap</button></li>
+      <li><button onclick="smScrollTo('services')">Services</button></li>
+      <li><button onclick="smScrollTo('pricing')">Packages</button></li>
+    </ul>
+    <button class="btn btn-gold btn-sm" onclick="smScrollTo('contact')">Let's Talk</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Exclusively Prepared For</span>
+    <div class="client">MN Scaffolding</div>
+    <div class="spec">Scaffolding · Shuttering &amp; Centering · Hyderabad</div>
+    <h1>Your Scaffolding Holds Up Half of Hyderabad.<br><em>Your Brand Should Stand Just As Tall.</em></h1>
+    <p class="lead">Aparna, Ramky, Modi Builders, TNR and Prajay already trust MN Scaffolding on site. But when a new contractor or project engineer looks you up before picking up the phone — that trust is nowhere to be found online. This proposal fixes exactly that.</p>
+    <div class="hero-stats">
+      <div class="hstat"><b>12</b><span>Cities Served</span></div>
+      <div class="hstat"><b>8+</b><span>Years in Market</span></div>
+      <div class="hstat"><b>8</b><span>Product Lines</span></div>
+      <div class="hstat"><b>360°</b><span>Digital Setup</span></div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn btn-gold" onclick="smScrollTo('pricing')">View Packages</button>
+      <button class="btn btn-out" onclick="smScrollTo('approach')">See Our Approach</button>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL ↓</div>
+</header>
+
+<section id="problem" class="dark reveal">
+  <div class="wrap">
+    <span class="sec-tag">The Gap</span>
+    <h2 class="sec-title">A Market Leader With a Missing Digital Footprint</h2>
+    <p class="sec-sub">MN Scaffolding is not an unknown brand. It is an under-documented one. Here is exactly what that costs you every month.</p>
+    <div class="g4">
+      <div class="card"><div class="num">01</div><h3>Invisible Proof</h3><p>Your material stands on hundreds of live projects across Telangana, AP and Karnataka. Almost none of it exists as content. Scale that isn't documented cannot be sold.</p></div>
+      <div class="card"><div class="num">02</div><h3>The Verification Drop-Off</h3><p>Contractors and procurement heads check Instagram, LinkedIn and Google before calling a supplier. A dormant profile quietly turns warm interest into a second quote request elsewhere.</p></div>
+      <div class="card"><div class="num">03</div><h3>Marquee Clients, Untold Story</h3><p>Aparna, Ramky, Modi Builders and Kajaria are on your homepage — and nowhere else. The strongest trust asset you own is doing zero work for you.</p></div>
+      <div class="card"><div class="num">04</div><h3>12 Cities, One Flat Presence</h3><p>Bengaluru, Vijayawada, Warangal, Vizag, Guntur and more. Each is a separate search market with separate competitors, and none of them are being spoken to directly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="reveal">
+  <div class="wrap">
+    <span class="sec-tag">Our Method</span>
+    <h2 class="sec-title">The 360° Approach — Built for B2B, Not Vanity Metrics</h2>
+    <p class="sec-sub">Scaffolding isn't bought on impulse. It's bought on confidence — in your stock, your safety standards and your delivery. Every platform below is chosen to build exactly that.</p>
+    <div class="wheel">
+      <div class="spoke"><b>Instagram</b><span>Site proof, product reels, brand recall</span></div>
+      <div class="spoke"><b>LinkedIn</b><span>Builders, developers, procurement heads</span></div>
+      <div class="spoke"><b>YouTube Shorts</b><span>Product explainers with long shelf life</span></div>
+      <div class="spoke"><b>Facebook</b><span>Contractors &amp; regional site network</span></div>
+      <div class="spoke"><b>Google Business</b><span>"Scaffolding on rent near me" searches</span></div>
+      <div class="spoke"><b>WhatsApp</b><span>Catalogue &amp; instant enquiry handling</span></div>
+    </div>
+    <div class="g2">
+      <div class="card"><h3>Proof Over Promotion</h3><p>Live site walkthroughs, erected structures, stockyard volume and manufacturing footage. In this industry, showing 40,000 sq ft of ready inventory closes more deals than any adjective.</p></div>
+      <div class="card"><h3>Safety as a Differentiator</h3><p>Site safety checklists, load-bearing explainers, correct-erection do's and don'ts. Highly shareable among site engineers — and it positions MN as the responsible supplier, not the cheapest one.</p></div>
+      <div class="card"><h3>Sales Enablement Content</h3><p>Every carousel and reel becomes something your team can forward on WhatsApp during a live negotiation. Content that shortens the gap between enquiry and order.</p></div>
+      <div class="card"><h3>Geo-Targeted Visibility</h3><p>City-specific content and search language for each branch — "scaffolding on rent in Warangal", "cuplock suppliers in Vijayawada" — so every branch earns its own discoverability.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="dark reveal">
+  <div class="wrap">
+    <span class="sec-tag">The Plan</span>
+    <h2 class="sec-title">Your 6-Month Roadmap</h2>
+    <p class="sec-sub">Foundation first, then compounding. Here's how the six months unfold.</p>
+    <div class="tl">
+      <div class="card"><div class="mth">Month 1</div><h3>Foundation &amp; Setup</h3><p>Brand audit, profile optimisation across platforms, content pillars locked, first stockyard and site shoot, visual identity for social.</p></div>
+      <div class="card"><div class="mth">Month 2</div><h3>Content Engine Launch</h3><p>Consistent publishing rhythm begins. Product line series — H-frame, cuplock, props, centering plates — introduced one by one.</p></div>
+      <div class="card"><div class="mth">Month 3</div><h3>Authority Building</h3><p>Safety and technical education content. Clientele and project proof rolled out. LinkedIn presence activated for developer and contractor audiences.</p></div>
+      <div class="card"><div class="mth">Month 4</div><h3>Enquiry Focus</h3><p>CTA-led content, WhatsApp enquiry funnel, catalogue-style carousels, rental FAQs and quote-request prompts built into the calendar.</p></div>
+      <div class="card"><div class="mth">Month 5</div><h3>Geo Expansion</h3><p>Branch-city content series. Google Business visibility and locally targeted messaging for the regional markets.</p></div>
+      <div class="card"><div class="mth">Month 6</div><h3>Scale &amp; Optimise</h3><p>Full performance review. Double down on the formats that pulled enquiries, retire what didn't, and set the plan for the next cycle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <div class="wrap">
+    <span class="sec-tag">Deliverables</span>
+    <h2 class="sec-title">What's Included, In Detail</h2>
+    <p class="sec-sub">Exact scope depends on the package selected. Here's the full capability set we bring to the table.</p>
+    <div class="tabs">
+      <button class="tab on" onclick="smTab(0,this)">Strategy</button>
+      <button class="tab" onclick="smTab(1,this)">Design</button>
+      <button class="tab" onclick="smTab(2,this)">Video &amp; Shoots</button>
+      <button class="tab" onclick="smTab(3,this)">Management</button>
+      <button class="tab" onclick="smTab(4,this)">Reporting</button>
+    </div>
+    <div class="pane on"><ul>
+      <li>Monthly content calendar &amp; strategy</li><li>Content pillar framework for B2B construction</li>
+      <li>Competitor benchmarking in the scaffolding segment</li><li>Hashtag &amp; keyword strategy</li>
+      <li>City-level content planning across branches</li><li>Campaign planning around project milestones</li>
+    </ul></div>
+    <div class="pane"><ul>
+      <li>Static post design in MN brand identity</li><li>Educational &amp; authority carousels</li>
+      <li>Product spec and comparison creatives</li><li>Safety checklist and infographic design</li>
+      <li>Story creatives &amp; highlight covers</li><li>Profile and cover graphics optimisation</li>
+    </ul></div>
+    <div class="pane"><ul>
+      <li>Professional reel shoots at stockyard &amp; live sites</li><li>Trend-based editing, transitions &amp; hooks</li>
+      <li>Subtitles and audio sync</li><li>Founder and team feature videos</li>
+      <li>Product demonstration and erection footage</li><li>Branding consistency across every cut</li>
+    </ul></div>
+    <div class="pane"><ul>
+      <li>Full page management &amp; daily scheduling</li><li>Instagram, Facebook &amp; LinkedIn publishing</li>
+      <li>Profile optimisation across platforms</li><li>Caption &amp; copywriting in brand tone</li>
+      <li>Story posting &amp; highlight organisation</li><li>Comment and DM response guidance</li>
+    </ul></div>
+    <div class="pane"><ul>
+      <li>Monthly performance report</li><li>Reach, engagement &amp; profile visit analysis</li>
+      <li>Best-performing content breakdown</li><li>Enquiry and DM tracking</li>
+      <li>Improvement recommendations each cycle</li><li>Monthly review call with your team</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="dark reveal">
+  <div class="wrap">
+    <span class="sec-tag">Track Record</span>
+    <h2 class="sec-title">What We've Delivered for Past Clients</h2>
+    <div class="g4">
+      <div class="stat"><b>1K → 20K</b><span>Follower growth achieved within 6 months for a past client</span></div>
+      <div class="stat"><b>5–10</b><span>Daily enquiries reached consistently within 8 months for service brands</span></div>
+      <div class="stat"><b>50+</b><span>Brands managed across India, UK &amp; US</span></div>
+      <div class="stat"><b>3</b><span>Offices — Mumbai, Hyderabad, Visakhapatnam</span></div>
+    </div>
+    <p class="disclaim">Results shown are from specific past clients. Every brand is unique — timelines vary based on market, specialty, consistency, and starting point. What we guarantee is the quality of work and execution, every month.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <span class="sec-tag">Portfolio</span>
+    <h2 class="sec-title">50+ Brands. Multiple Industries. Three Countries.</h2>
+    <p class="sec-sub">We've built social presence for brands across healthcare, education, food &amp; beverage, fitness, real estate, fashion and professional services — in India, the UK and the US.</p>
+    <div class="g3">
+      <div class="card"><h3>Healthcare &amp; Clinics</h3><p>Multi-branch hospital chains and independent practices — built from zero presence to consistent patient enquiries.</p></div>
+      <div class="card"><h3>Real Estate &amp; Infrastructure</h3><p>Builders and project brands — walkthrough content, site documentation and lead capture systems.</p></div>
+      <div class="card"><h3>Retail, F&amp;B &amp; Lifestyle</h3><p>Product and experience-led brands with launch campaigns, photography and always-on content.</p></div>
+    </div>
+    <p style="margin-top:26px"><a class="btn btn-out" href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">View Full Portfolio</a></p>
+  </div>
+</section>
+
+<section id="about" class="dark reveal">
+  <div class="wrap">
+    <img class="about-logo" src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" alt="Sanghamitra Media">
+    <span class="sec-tag">Who We Are</span>
+    <h2 class="sec-title">Sanghamitra Media — A Branding Company</h2>
+    <p class="sec-sub">"The algorithm changes. Human psychology doesn't." We build brands that people remember, trust and choose — with strategy first and aesthetics right behind it.</p>
+    <div class="g2">
+      <div>
+        <span class="pill">Strategy-Led</span><span class="pill">In-House Production</span><span class="pill">Sector Specialists</span><span class="pill">Transparent Reporting</span><span class="pill">Long-Term Partnerships</span>
+        <p style="color:#9DB6C6;margin-top:18px;font-size:15px">We work with 50+ clients across India, the UK and the US. Every account is handled by a dedicated team covering strategy, design, production and reporting — not a freelancer rotating between brands.</p>
+      </div>
+      <div>
+        <div class="office"><b>Mumbai</b><span>Office</span></div>
+        <div class="office"><b>Hyderabad</b><span>Office</span></div>
+        <div class="office"><b>Visakhapatnam</b><span>Regional Office</span></div>
+        <div class="office"><b>Reach Us</b><span>proposal@sanghamitramedia.com · +91 81213 50865</span><span><a href="https://sanghamitramedia.com" target="_blank" rel="noopener" style="color:var(--sm-cyan);text-decoration:none">sanghamitramedia.com</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="reveal">
+  <div class="wrap">
+    <span class="sec-tag">Investment</span>
+    <h2 class="sec-title">Choose Your Package</h2>
+    <p class="sec-sub">Three ways to work together. All packages run on a 6-month minimum commitment, billed in the first week of every month. GST applicable additionally.</p>
+    <div class="price-grid">
+
+      <div class="pcard">
+        <div class="pname">Package 1 — Creative Content</div>
+        <div class="pfor">For consistent, professional presence and steady brand recall.</div>
+        <div class="ptier"><span class="amt">₹35,000</span><span class="lbl">per month</span></div>
+        <div class="pgst">+ GST · 6-month minimum</div>
+        <ul class="plist">
+          <li>15 static / carousel posts per month</li>
+          <li>Creative design in MN brand identity</li>
+          <li>Content &amp; copywriting</li>
+          <li>Posting across Instagram, Facebook &amp; LinkedIn</li>
+          <li>Monthly content calendar</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <button class="btn btn-out" style="width:100%" onclick="smScrollTo('contact')">Choose Package 1</button>
+      </div>
+
+      <div class="pcard reco">
+        <div class="reco-tag">Recommended</div>
+        <div class="pname">Package 2 — Reels Growth</div>
+        <div class="pfor">For maximum reach, engagement and visibility through video.</div>
+        <div class="ptier"><span class="amt">₹35,000</span><span class="lbl">Mobile<br>shoot</span></div>
+        <div class="ptier"><span class="amt">₹45,000</span><span class="lbl">Professional<br>videography</span></div>
+        <div class="pgst">+ GST · 6-month minimum</div>
+        <ul class="plist">
+          <li>10 professionally produced reels per month</li>
+          <li>Shoot included — stockyard &amp; live sites</li>
+          <li>Video editing, hooks, subtitles &amp; branding</li>
+          <li>Content planning &amp; scripting</li>
+          <li>Posting across Instagram, Facebook &amp; LinkedIn</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <button class="btn btn-gold" style="width:100%" onclick="smScrollTo('contact')">Choose Package 2</button>
+      </div>
+
+      <div class="pcard">
+        <div class="pname">Package 3 — Complete 360°</div>
+        <div class="pfor">Everything, working together. The full digital setup for MN Scaffolding.</div>
+        <div class="ptier"><span class="amt">₹55,000</span><span class="lbl">per month</span></div>
+        <div class="pgst">+ GST · 6-month minimum</div>
+        <ul class="plist">
+          <li>Everything in Package 1 + Package 2</li>
+          <li>15 static / carousel posts + 10 reels monthly</li>
+          <li>Professional shoot &amp; production included</li>
+          <li>Full page management — Instagram, Facebook, LinkedIn, YouTube Shorts</li>
+          <li>Google Business Profile optimisation</li>
+          <li>WhatsApp catalogue setup &amp; enquiry funnel</li>
+          <li>Branch-city geo content strategy</li>
+          <li>Monthly review call with your team</li>
+        </ul>
+        <button class="btn btn-out" style="width:100%" onclick="smScrollTo('contact')">Choose Package 3</button>
+      </div>
+    </div>
+
+    <div class="addons">
+      <h3>Optional Add-Ons</h3>
+      <p style="color:var(--sm-muted);font-size:15px">Available on request, quoted separately based on scope.</p>
+      <ul>
+        <li>Drone footage of tall scaffold structures &amp; project sites</li>
+        <li>Client testimonial video production</li>
+        <li>Product catalogue &amp; brochure design</li>
+        <li>Website revamp &amp; SEO</li>
+        <li>Google Ads &amp; Meta Ads management</li>
+        <li>Corporate profile film</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta reveal">
+  <div class="wrap">
+    <h2>Ready to Build MN Scaffolding's Digital Presence?</h2>
+    <p>Let's get the first shoot on the calendar and put eight years of work where your buyers can actually see it.</p>
+    <div class="cta-btns">
+      <a class="btn btn-gold" href="https://wa.me/918121350865" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="btn btn-out" href="mailto:swetha@sanghamitramedia.com">Email Us</a>
+    </div>
+    <div class="poc">
+      Prepared for <b>Mr. Nawaz Khan</b> — MN Scaffolding · +91 89784 38180<br>
+      Your point of contact: <b>Swetha Chilaka</b> · +91 81213 50865 · swetha@sanghamitramedia.com
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png" alt="Sanghamitra Media">
+    <div class="excl">Exclusively prepared for MN Scaffolding</div>
+    <div>
+      <a href="https://sanghamitramedia.com" target="_blank" rel="noopener">Website</a>
+      <a href="https://sanghamitramedia.com/social-media-marketing-in-india/" target="_blank" rel="noopener">Portfolio</a>
+      <a href="mailto:proposal@sanghamitramedia.com">Email</a>
+      <a href="https://wa.me/918121350865" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p style="margin-top:18px;font-size:13px">Sanghamitra Media · A unit of Repentino Education Private Limited<br>Mumbai · Hyderabad · Visakhapatnam</p>
+  </div>
+</footer>
+
+<script>
+function smScrollTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+function smTab(i,btn){
+  var tabs=document.querySelectorAll('.tab'),panes=document.querySelectorAll('.pane');
+  tabs.forEach(function(t){t.classList.remove('on')});
+  panes.forEach(function(p){p.classList.remove('on')});
+  btn.classList.add('on');panes[i].classList.add('on');
+}
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
