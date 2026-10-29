@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proposal for Advocate Sindhura Thadi · The Legal Lens | Sanghamitra Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#F5A800;--blue:#1E6FBF;--cyan:#29ABE2;--black:#0A0A0A;--navy:#0D1F2D;--cream:#FAF8F4;--text:#1A2E3A;--muted:#5A7A8A;--border:#E0E8F0;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,-apple-system,Segoe UI,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--cream);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.2}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.dark .eyebrow{color:var(--cyan)}
+.title{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:900;color:var(--navy);margin-bottom:16px}
+.title em{font-style:italic;color:var(--gold)}
+.dark{background:var(--navy);color:#cfdde6}
+.dark .title{color:#fff}
+.lead{font-size:1.08rem;color:var(--muted);max-width:720px}
+.dark .lead{color:#9fb6c4}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:var(--sans);font-weight:600;font-size:.95rem;cursor:pointer;border:2px solid transparent;transition:.25s;text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:#ffbb22;transform:translateY(-2px)}
+.btn-out{background:transparent;color:var(--cyan);border-color:var(--cyan)}
+.btn-out:hover{background:var(--cyan);color:var(--black)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top,0px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer;font-family:var(--serif);font-weight:700;color:var(--navy)}
+.links{display:flex;gap:26px;list-style:none}
+.links li{cursor:pointer;font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s}
+.links li:hover{color:var(--blue)}
+.nav-cta{padding:10px 22px;font-size:.85rem}
+/* HERO */
+.hero{background:radial-gradient(ellipse at 80% 20%,rgba(41,171,226,.18),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(245,168,0,.12),transparent 50%),var(--black);color:#fff;min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;position:relative}
+.badge{display:inline-block;border:1px solid rgba(245,168,0,.5);color:var(--gold);padding:7px 18px;border-radius:50px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:900;margin-bottom:10px}
+.hero h1 span{color:var(--gold)}
+.hero .sub{color:var(--cyan);font-size:1.05rem;font-weight:500;margin-bottom:22px}
+.hero p.desc{color:#b9c8d2;font-size:1.12rem;max-width:680px;margin-bottom:34px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px}
+.hstat{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);border-radius:14px;padding:20px}
+.hstat b{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--gold)}
+.hstat span{font-size:.82rem;color:#9fb6c4}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.2em;color:#6d8796;text-transform:uppercase;cursor:pointer;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+/* CARDS */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,31,45,.08)}
+.card .ic{font-size:1.6rem;margin-bottom:12px}
+.card h3{font-size:1.15rem;color:var(--navy);margin-bottom:8px}
+.card p{font-size:.92rem;color:var(--muted)}
+.prob .card{border-top:3px solid var(--gold)}
+/* APPROACH */
+.appr{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:44px}
+.wheel{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto}
+.wheel svg{position:absolute;inset:0;width:100%;height:100%}
+.hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36%;aspect-ratio:1;border-radius:50%;background:var(--gold);color:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-weight:900;font-size:1rem;line-height:1.15;box-shadow:0 0 0 10px rgba(245,168,0,.15)}
+.hub small{font-family:var(--sans);font-weight:500;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.node{position:absolute;transform:translate(-50%,-50%);width:25%;aspect-ratio:1;border-radius:50%;background:var(--black);border:2px solid var(--cyan);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:.7rem;font-weight:600;color:#fff;padding:6px;line-height:1.2}
+.node i{font-style:normal;font-size:1.25rem;margin-bottom:2px}
+.node.pri{border-color:var(--gold)}
+.apts{display:grid;gap:18px}
+.apt{display:flex;gap:16px;align-items:flex-start}
+.apt .n{flex:0 0 40px;height:40px;border-radius:50%;background:rgba(41,171,226,.15);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700}
+.apt h4{color:#fff;font-size:1.05rem;margin-bottom:4px}
+.apt p{font-size:.9rem;color:#9fb6c4}
+.comply{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+.cbox{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+.cbox h4{font-size:1.15rem;margin-bottom:14px}
+.cbox.yes h4{color:var(--cyan)}
+.cbox.no h4{color:var(--gold)}
+.cbox ul{list-style:none;display:grid;gap:9px;font-size:.9rem}
+.cbox li{padding-left:24px;position:relative}
+.cbox.yes li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700}
+.cbox.no li::before{content:"✕";position:absolute;left:0;color:var(--gold);font-weight:700}
+.note{font-size:.82rem;color:#7f98a7;margin-top:18px;font-style:italic}
+.handles{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.handles a{font-size:.8rem;padding:6px 14px;border-radius:50px;border:1px solid rgba(41,171,226,.4);color:var(--cyan);text-decoration:none}
+.handles a:hover{background:rgba(41,171,226,.12)}
+/* ROADMAP */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.tcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden}
+.tcard .m{font-family:var(--serif);font-size:3rem;font-weight:900;color:rgba(245,168,0,.18);position:absolute;top:8px;right:18px}
+.tcard .lbl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.tcard h3{font-size:1.2rem;color:var(--navy);margin:6px 0 12px}
+.tcard ul{padding-left:18px;font-size:.88rem;color:var(--muted);display:grid;gap:5px}
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 26px}
+.tab{padding:11px 22px;border-radius:50px;border:1px solid var(--border);background:#fff;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:.9rem;color:var(--muted);transition:.2s}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pane{display:none;background:#fff;border:1px solid var(--border);border-radius:18px;padding:36px}
+.pane.on{display:grid;grid-template-columns:1fr 1fr;gap:14px 36px;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.pane h3{grid-column:1/-1;color:var(--navy);font-size:1.35rem;margin-bottom:6px}
+.it{display:flex;gap:12px;font-size:.93rem}
+.it::before{content:"";flex:0 0 8px;height:8px;margin-top:9px;border-radius:50%;background:var(--gold)}
+.it b{color:var(--navy)}
+/* RESULTS */
+.rcard{text-align:center;border-radius:16px;padding:32px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.rcard b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--gold);margin-bottom:8px}
+.rcard p{font-size:.88rem;color:#9fb6c4}
+.disc{margin-top:28px;padding:18px 22px;border-left:3px solid var(--cyan);background:rgba(41,171,226,.06);font-size:.88rem;color:#9fb6c4;font-style:italic;border-radius:0 10px 10px 0}
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;margin-top:40px}
+.about p{color:var(--muted);margin-bottom:16px}
+.tagq{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--navy);border-left:3px solid var(--gold);padding-left:18px;margin:22px 0}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.pill{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.88rem;font-weight:500;color:var(--navy)}
+.abox{background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px}
+
+.off{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:.92rem}
+.off span{color:var(--muted);font-size:.82rem}
+.off.home b{color:var(--blue)}
+.ct{margin-top:18px;display:grid;gap:6px;font-size:.9rem}
+.ct a{text-decoration:none;color:var(--blue)}
+/* PRICING */
+.prices{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:44px}
+.pcard{border-radius:20px;padding:36px;border:1px solid var(--border);background:#fff}
+.pcard.main{border:2px solid var(--gold);position:relative}
+.ribbon{position:absolute;top:-13px;left:32px;background:var(--gold);color:var(--black);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px}
+.pcard h3{font-size:1.4rem;color:var(--navy)}
+.price{font-family:var(--serif);font-size:2.8rem;font-weight:900;color:var(--navy);margin:10px 0 2px}
+.price small{font-family:var(--sans);font-size:1rem;font-weight:400;color:var(--muted)}
+.terms{font-size:.85rem;color:var(--muted);margin-bottom:20px}
+.pcard ul{list-style:none;display:grid;gap:9px;font-size:.9rem;margin-bottom:26px}
+.pcard li{padding-left:24px;position:relative}
+.pcard li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.pcard.alt{background:var(--navy);color:#cfdde6;border-color:var(--navy)}
+.pcard.alt h3,.pcard.alt .price{color:#fff}
+.pcard.alt li::before{color:var(--cyan)}
+.addons{margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px}
+.addons h4{font-size:1.15rem;color:var(--navy);margin-bottom:14px}
+.arow{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed var(--border);font-size:.92rem}
+.arow:last-child{border:0}
+.arow b{color:var(--navy);white-space:nowrap}
+/* CTA + FOOTER */
+.cta{text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(245,168,0,.18),transparent 60%),var(--black);color:#fff}
+.cta .title{color:#fff}
+.cta .lead{margin:0 auto 34px;color:#9fb6c4}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+footer{background:var(--black);color:#7f98a7;padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(255,255,255,.06);font-size:.85rem}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.flogo{background:#fff;border-radius:10px;padding:6px 10px;display:inline-flex}
+.foot .ex{color:var(--gold);font-weight:500}
+.flinks{display:flex;gap:18px}
+.flinks span{cursor:pointer}
+.flinks span:hover{color:var(--cyan)}
+.logo{display:block;width:auto;max-width:none;object-fit:contain}
+.nav-logo{height:38px}
+.about-logo{height:auto;width:100%;max-width:320px;margin-bottom:18px}
+.foot-logo{height:28px}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:980px){.links{display:none}.grid4,.hstats{grid-template-columns:repeat(2,1fr)}.grid3,.tl{grid-template-columns:1fr 1fr}.appr,.about,.prices,.comply{grid-template-columns:1fr}}
+@media(max-width:768px){.hero-scroll{display:none}section{padding:72px 0}.grid3,.tl,.grid4,.pane.on,.pillars{grid-template-columns:1fr}.pane{padding:24px}.hero{padding:120px 0 70px}.nav-logo{height:30px}.arow{flex-direction:column;gap:2px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="wrap nav-in">
+<div class="brand" onclick="go('hero')"><img class="logo nav-logo" src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm-logo-black.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png'" alt="Sanghamitra Media — A Branding Company"></div>
+<ul class="links">
+<li onclick="go('approach')">Strategy</li><li onclick="go('roadmap')">Roadmap</li><li onclick="go('services')">Services</li><li onclick="go('about')">About</li><li onclick="go('pricing')">Investment</li>
+</ul>
+<button class="btn btn-gold nav-cta" onclick="go('contact')">Let’s Talk</button>
+</div>
+</nav>
+
+<header class="hero" id="hero">
+<div class="wrap">
+<div class="badge">Exclusively Prepared For</div>
+<h1>Advocate <span>Sindhura Thadi</span></h1>
+<div class="sub">Advocate, District Court, Visakhapatnam · Vakeelsaab — The Legal Lens</div>
+<p class="desc">Be the calm, credible voice Visakhapatnam turns to when it wants to understand the law. An audio-first, Bar Council–aware legal awareness plan in Telugu and English — no camera required.</p>
+<div class="hero-btns">
+<button class="btn btn-gold" onclick="go('approach')">See the Strategy →</button>
+<button class="btn btn-out" onclick="go('pricing')">View Investment</button>
+</div>
+<div class="hstats">
+<div class="hstat"><b>12</b><span>Awareness posts every month</span></div>
+<div class="hstat"><b>1</b><span>Long-form audio episode / month</span></div>
+<div class="hstat"><b>5</b><span>Platforms from one recording</span></div>
+<div class="hstat"><b>100%</b><span>Posts compliance-reviewed</span></div>
+</div>
+</div>
+<div class="hero-scroll" onclick="go('problem')">Scroll ↓</div>
+</header>
+
+<section id="problem">
+<div class="wrap rv">
+<span class="eyebrow">Where Things Stand</span>
+<h2 class="title">A strong voice, <em>heard by too few</em></h2>
+<p class="lead">You already have goodwill on Facebook and a brand name — The Legal Lens — with real potential. Here’s what’s holding it back today.</p>
+<div class="grid4 prob">
+<div class="card"><div class="ic">📍</div><h3>One platform carries everything</h3><p>Your Facebook following is real, but Instagram, YouTube and search — where younger Vizag families look for answers — barely know you yet.</p></div>
+<div class="card"><div class="ic">⏸️</div><h3>The Legal Lens started, then paused</h3><p>Irregular posting tells the algorithm to stop showing you. A brand only builds trust when people see it show up, week after week.</p></div>
+<div class="card"><div class="ic">⚖️</div><h3>The rules just got stricter</h3><p>The Bar Council of India’s July 2026 social media circular reaffirmed Rule 36: no advertising, solicitation or client acquisition online. Many “lawyer reels” now carry real risk.</p></div>
+<div class="card"><div class="ic">🎙️</div><h3>Video isn’t the comfort zone — yet</h3><p>Most agencies would push you on camera. We think your voice is the asset. Audio-led content can build authority without a single face-to-camera shoot.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="approach">
+<div class="wrap rv">
+<span class="eyebrow">Our 360° Approach</span>
+<h2 class="title">Record once. <em>Be heard everywhere.</em></h2>
+<p class="lead">One monthly recording session with you becomes a full month of legal awareness content — shaped natively for each platform, in Telugu and English, reviewed against Bar Council guidelines before anything goes live.</p>
+<div class="appr">
+<div class="wheel">
+<svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="rgba(41,171,226,.35)" stroke-width=".4" stroke-dasharray="1.5 1.5"><line x1="50" y1="50" x2="50" y2="9"/><line x1="50" y1="50" x2="85.5" y2="29.5"/><line x1="50" y1="50" x2="85.5" y2="70.5"/><line x1="50" y1="50" x2="50" y2="91"/><line x1="50" y1="50" x2="14.5" y2="70.5"/><line x1="50" y1="50" x2="14.5" y2="29.5"/></g><circle cx="50" cy="50" r="41" fill="none" stroke="rgba(255,255,255,.07)" stroke-width=".4"/></svg>
+<div class="hub">The Legal Lens<small>Your voice</small></div>
+<div class="node pri" style="top:9%;left:50%"><i>📘</i>Facebook</div>
+<div class="node pri" style="top:29.5%;left:85.5%"><i>📸</i>Instagram</div>
+<div class="node" style="top:70.5%;left:85.5%"><i>▶️</i>YouTube</div>
+<div class="node" style="top:91%;left:50%"><i>🎧</i>Podcast</div>
+<div class="node" style="top:70.5%;left:14.5%"><i>💬</i>WhatsApp Channel</div>
+<div class="node" style="top:29.5%;left:14.5%"><i>🌐</i>Website</div>
+</div>
+<div class="apts">
+<div class="apt"><div class="n">1</div><div><h4>Facebook stays home base</h4><p>Your existing audience lives here. We consolidate your profiles around one primary Page and post consistently, so current followers become the first listeners of The Legal Lens.</p></div></div>
+<div class="apt"><div class="n">2</div><div><h4>Instagram becomes the growth engine</h4><p>@vakeelsaab_the_legal_lens is revived as the public-awareness brand, with @sindhura_thadi kept dignified and professional. Audio-led reels and carousels built for saves and shares.</p></div></div>
+<div class="apt"><div class="n">3</div><div><h4>YouTube and podcast for search</h4><p>People search “how to…” legal questions in Telugu every day. A monthly long-form audio episode (with waveform visuals) plus Shorts puts your explanations where those searches land.</p></div></div>
+<div class="apt"><div class="n">4</div><div><h4>WhatsApp Channel and a compliant website</h4><p>An opt-in WhatsApp Channel for weekly legal awareness notes, and — if you choose — a simple website carrying only Bar Council–permitted information plus your articles.</p></div></div>
+</div>
+</div>
+<div class="handles">
+<a href="https://www.facebook.com/share/17gKyg6DpR/" target="_blank" rel="noopener">Facebook · 1</a>
+<a href="https://www.facebook.com/share/1E5ziu425H/" target="_blank" rel="noopener">Facebook · 2</a>
+<a href="https://www.facebook.com/share/1dFhxNNdnN/" target="_blank" rel="noopener">Facebook · 3</a>
+<a href="https://www.instagram.com/sindhura_thadi" target="_blank" rel="noopener">@sindhura_thadi</a>
+<a href="https://www.instagram.com/vakeelsaab_the_legal_lens" target="_blank" rel="noopener">@vakeelsaab_the_legal_lens</a>
+</div>
+<div class="comply">
+<div class="cbox yes"><h4>What we will create</h4><ul>
+<li>Legal awareness and “know your rights” explainers</li>
+<li>Neutral updates on new laws and important judgments</li>
+<li>Myth-vs-fact posts that correct legal misinformation</li>
+<li>General answers to common public questions — never case-specific advice</li>
+<li>Your own recorded voice, with clear, accurate sourcing</li>
+</ul></div>
+<div class="cbox no"><h4>What we will never do</h4><ul>
+<li>“Contact me for your case” or any solicitation call-to-action</li>
+<li>Client testimonials, case wins, fees or success claims</li>
+<li>Content filmed in or depicting court premises or proceedings</li>
+<li>AI voice clones, deepfakes or synthetic court/judge imagery</li>
+<li>Paid ads promoting legal services or influencer endorsements</li>
+</ul></div>
+</div>
+<p class="note">Guardrails are based on Rule 36 of the Bar Council of India Rules and the BCI circular on social media and digital ethics dated 17 July 2026. We are marketers, not your legal counsel on professional conduct — every post goes to you for final approval, and you remain the final judge of what is appropriate for your practice.</p>
+</div>
+</section>
+
+<section id="roadmap">
+<div class="wrap rv">
+<span class="eyebrow">6-Month Roadmap</span>
+<h2 class="title">From paused to <em>trusted</em></h2>
+<p class="lead">A steady build, month by month. Every phase grows reach, recall and trust — the things a respected advocate’s reputation is made of.</p>
+<div class="tl">
+<div class="tcard"><div class="m">01</div><div class="lbl">Month 1</div><h3>Foundation &amp; Brand Setup</h3><ul><li>Audit of your 3 Facebook profiles/pages; pick one primary</li><li>Fresh visual identity for The Legal Lens</li><li>Bios with only permitted professional details</li><li>YouTube + WhatsApp Channel set-up</li><li>Simple recording kit guidance + first session</li><li>Compliance checklist agreed with you</li></ul></div>
+<div class="tcard"><div class="m">02</div><div class="lbl">Month 2</div><h3>Content Engine Launch</h3><ul><li>First monthly audio episode published</li><li>12 posts across Facebook and Instagram</li><li>Telugu-first content with English captions</li><li>Testing 5 content pillars to see what resonates</li></ul></div>
+<div class="tcard"><div class="m">03</div><div class="lbl">Month 3</div><h3>Community Building</h3><ul><li>Story polls, quizzes and “Ask the Lens” question boxes</li><li>Weekly myth-vs-fact series</li><li>WhatsApp Channel growth from Facebook audience</li><li>First review of best-performing topics</li></ul></div>
+<div class="tcard"><div class="m">04</div><div class="lbl">Month 4</div><h3>Discoverability &amp; Search</h3><ul><li>Telugu keyword research for YouTube titles</li><li>Topic playlists (property, family, consumer, cyber)</li><li>Searchable, evergreen explainers that keep working</li><li>Website live, if opted for</li></ul></div>
+<div class="tcard"><div class="m">05</div><div class="lbl">Month 5</div><h3>Authority &amp; Trust</h3><ul><li>Explainer series on the new criminal laws (BNS, BNSS, BSA)</li><li>Neutral breakdowns of important judgments</li><li>Optional legal-literacy talks for colleges or community groups</li></ul></div>
+<div class="tcard"><div class="m">06</div><div class="lbl">Month 6</div><h3>Scale &amp; Optimise</h3><ul><li>Double down on top formats and topics</li><li>Gentle step toward video, only if you’re ready</li><li>6-month review and next-phase plan</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="services" style="background:#fff">
+<div class="wrap rv">
+<span class="eyebrow">Services Included</span>
+<h2 class="title">Everything in your <em>Legal Lens</em> package</h2>
+<div class="tabs">
+<button class="tab on" onclick="tab(0)">Strategy &amp; Pillars</button>
+<button class="tab" onclick="tab(1)">Audio-First Content</button>
+<button class="tab" onclick="tab(2)">Design &amp; Writing</button>
+<button class="tab" onclick="tab(3)">Page Management</button>
+<button class="tab" onclick="tab(4)">Compliance &amp; Reports</button>
+</div>
+<div class="pane on"><h3>Strategy &amp; content pillars</h3>
+<div class="it"><span><b>Know Your Rights</b> — tenants, consumers, women, employees, citizens and the police</span></div>
+<div class="it"><span><b>Law in Daily Life</b> — property, wills, registration, cheque bounce, maintenance</span></div>
+<div class="it"><span><b>Myth vs Fact</b> — correcting the legal misinformation people forward on WhatsApp</span></div>
+<div class="it"><span><b>The Legal Lens on News</b> — neutral explainers of new laws and judgments</span></div>
+<div class="it"><span><b>Ask the Lens</b> — general answers to common public questions</span></div>
+<div class="it"><span>Monthly content calendar, mapped to awareness days and news cycles</span></div>
+</div>
+<div class="pane"><h3>Audio-first content — no camera needed</h3>
+<div class="it"><span><b>1 monthly recording session</b> (60–90 min), guided by our scripts</span></div>
+<div class="it"><span><b>1 long-form audio episode</b> (15–20 min) for YouTube and Spotify</span></div>
+<div class="it"><span><b>6 audio-led reels</b> — your voice with kinetic text, subtitles and neutral visuals</span></div>
+<div class="it"><span>Reels repurposed as YouTube Shorts and Facebook Reels</span></div>
+<div class="it"><span>Audio clean-up, music bed, hooks and branded intro/outro</span></div>
+<div class="it"><span>Professional branding stills (optional, at your comfort) for profiles and covers</span></div>
+</div>
+<div class="pane"><h3>Design &amp; writing</h3>
+<div class="it"><span><b>4 educational carousels</b> per month — saved and shared most</span></div>
+<div class="it"><span><b>2 static awareness posts</b> — legal facts, important dates, quotes from statutes</span></div>
+<div class="it"><span>Script writing in Telugu and English, fact-checked against bare acts</span></div>
+<div class="it"><span>Bilingual captions with clear, accurate sourcing</span></div>
+<div class="it"><span>Highlight covers, profile banners and Legal Lens brand kit</span></div>
+<div class="it"><span>Hashtag and keyword strategy for Telugu legal searches</span></div>
+</div>
+<div class="pane"><h3>Page management</h3>
+<div class="it"><span>Scheduling and publishing across Facebook, Instagram and YouTube</span></div>
+<div class="it"><span>3–4 stories a week: polls, quizzes, reshares and reminders</span></div>
+<div class="it"><span>Weekly WhatsApp Channel awareness note</span></div>
+<div class="it"><span>Profile optimisation with permitted professional details only</span></div>
+<div class="it"><span>Comment moderation; general questions routed to you, never answered as advice by us</span></div>
+<div class="it"><span>Light-touch upkeep of your personal profiles alongside the brand</span></div>
+</div>
+<div class="pane"><h3>Compliance &amp; reporting</h3>
+<div class="it"><span><b>Pre-publish compliance check</b> on every post against our agreed checklist</span></div>
+<div class="it"><span>Your approval on every script before recording and every post before publishing</span></div>
+<div class="it"><span>Standard “for general awareness only, not legal advice” disclaimers</span></div>
+<div class="it"><span>Monthly report: reach, saves, shares, followers, subscribers, top topics</span></div>
+<div class="it"><span>Monthly 30-minute review call with recommendations</span></div>
+<div class="it"><span>Ongoing tracking of Bar Council guidance changes</span></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="results">
+<div class="wrap rv">
+<span class="eyebrow">Past Results</span>
+<h2 class="title">What education-first content <em>has done before</em></h2>
+<p class="lead">For an advocate, we measure reach, saves, shares, subscribers and search visibility — the signals of public trust — not “leads”.</p>
+<div class="grid4">
+<div class="rcard"><b>1K → ~20K</b><p>Followers within 6 months for a past client</p></div>
+<div class="rcard"><b>Minimal → active</b><p>Community built from almost no presence with an education-first voice</p></div>
+<div class="rcard"><b>3 months</b><p>To visible authority growth for professional personal brands</p></div>
+<div class="rcard"><b>50+</b><p>Brands across India, the UK and the US</p></div>
+</div>
+<div class="disc">Results shown are from specific past clients. Every brand is unique — timelines vary based on market, specialty, consistency, and starting point. What we guarantee is the quality of work and execution, every month.</div>
+</div>
+</section>
+
+<section id="about" style="background:#fff">
+<div class="wrap rv">
+<span class="eyebrow">About Us</span>
+<h2 class="title">Sanghamitra Media — <em>A Branding Company</em></h2>
+<div class="about">
+<div>
+<p>Sanghamitra Media is a full-service digital marketing and branding agency working with 50+ brands across India, the UK and the US. We specialise in building trusted personal brands for professionals — doctors, educators and experts whose reputation is their practice.</p>
+<p>Our belief is simple: platforms change constantly, but people still trust those who teach them something true, clearly and consistently.</p>
+<div class="tagq">“The algorithm changes. Human psychology doesn’t.”</div>
+<div class="pillars"><div class="pill">🎯 Strategy before content</div><div class="pill">🧠 Psychology-led storytelling</div><div class="pill">⚖️ Ethics-aware execution</div><div class="pill">📈 Monthly accountability</div></div>
+</div>
+<div class="abox">
+<img class="logo about-logo" src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm-logo-black.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png'" alt="Sanghamitra Media — A Branding Company">
+<div class="off"><b>Mumbai</b><span>Office</span></div>
+<div class="off"><b>Hyderabad</b><span>Office</span></div>
+<div class="off home"><b>Visakhapatnam</b><span>Regional Office</span></div>
+<div class="ct">
+<a href="mailto:proposal@sanghamitramedia.com">✉ proposal@sanghamitramedia.com</a>
+<a href="tel:+918121350865">☎ +91 81213 50865</a>
+<a href="tel:+919581465219">☎ +91 95814 65219</a>
+<a href="https://sanghamitramedia.com" target="_blank" rel="noopener">🌐 sanghamitramedia.com</a>
+<span style="color:var(--muted);font-size:.8rem;margin-top:6px">Repentino Education Private Limited</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="wrap rv">
+<span class="eyebrow">Investment</span>
+<h2 class="title">A package built <em>around you</em></h2>
+<p class="lead">Custom-structured for Advocate Sindhura Thadi: audio-first, platform-smart and lean — with the same quality of execution as our full-service clients.</p>
+<div class="prices">
+<div class="pcard main"><div class="ribbon">Recommended</div>
+<h3>Legal Lens Awareness Package</h3>
+<div class="price">₹25,000<small> / month</small></div>
+<div class="terms">6-month commitment · Payment in the 1st week of every month</div>
+<ul>
+<li>Strategy, content pillars and monthly content calendar</li>
+<li>1 guided recording session + 1 long-form audio episode (YouTube &amp; Spotify)</li>
+<li>12 posts/month: 6 audio-led reels, 4 carousels, 2 static posts</li>
+<li>Repurposing to YouTube Shorts and Facebook Reels</li>
+<li>Telugu + English scripting and captions</li>
+<li>3–4 stories/week + weekly WhatsApp Channel note</li>
+<li>Management of Facebook, Instagram and YouTube</li>
+<li>Pre-publish compliance check on every post</li>
+<li>One-time set-up: brand kit, profiles, YouTube, WhatsApp Channel</li>
+<li>Monthly performance report + review call</li>
+</ul>
+<button class="btn btn-gold" onclick="go('contact')">Start With This Plan</button>
+</div>
+<div class="pcard alt">
+<h3>Legal Lens 360°</h3>
+<div class="price">Custom<small> — book a call</small></div>
+<div class="terms" style="color:#9fb6c4">When you’re ready to go further</div>
+<ul>
+<li>Everything in the Awareness Package</li>
+<li>Video content, introduced at your pace</li>
+<li>Full YouTube channel management and series production</li>
+<li>Compliant website with legal awareness blog</li>
+<li>Legal-literacy event and talk support</li>
+<li>Expanded bilingual publishing</li>
+</ul>
+<button class="btn btn-out" onclick="go('contact')">Book a Call</button>
+</div>
+</div>
+<div class="addons"><h4>Optional add-ons</h4>
+<div class="arow"><span>Bar Council–compliant website (permitted details, disclaimer, articles)</span><b>₹12,000 one-time</b></div>
+<div class="arow"><span>Additional recording or video shoot session</span><b>₹5,000 / session</b></div>
+<div class="arow"><span>Website maintenance &amp; legal awareness blog</span><b>₹10,000 / month</b></div>
+<div class="arow"><span>YouTube channel management</span><b>₹20,000 / month</b></div>
+<div class="arow"><span>WhatsApp Business set-up &amp; automation</span><b>₹8,000 one-time</b></div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="wrap rv">
+<span class="eyebrow" style="color:var(--cyan)">Let’s Begin</span>
+<h2 class="title">Ready to Build Advocate Sindhura Thadi’s <em>Digital Presence?</em></h2>
+<p class="lead">Let’s bring The Legal Lens back — consistently, responsibly and in your own voice. One conversation is all it takes to plan the first month.</p>
+<div class="cta-btns">
+<a class="btn btn-gold" href="https://wa.me/918121350865" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+<a class="btn btn-out" href="mailto:proposal@sanghamitramedia.com">✉ Email Us</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap foot">
+<div style="display:flex;align-items:center;gap:14px"><span class="flogo"><img class="logo foot-logo" src="https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm-logo-black.png" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/Amaresh-Ithigani/Growtactics-Proposals/main/sm%20color%20logo%20b.png'" alt="Sanghamitra Media"></span><span>© 2026 Sanghamitra Media</span></div>
+<div class="ex">Exclusively prepared for Advocate Sindhura Thadi</div>
+<div class="flinks"><span onclick="go('hero')">Top</span><span onclick="go('services')">Services</span><span onclick="go('pricing')">Investment</span><a href="https://sanghamitramedia.com" target="_blank" rel="noopener" style="text-decoration:none">Website</a></div>
+</div>
+</footer>
+
+<script>
+function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+function tab(i){var t=document.querySelectorAll('#services .tab'),p=document.querySelectorAll('#services .pane');t.forEach(function(x,j){x.classList.toggle('on',j===i);});p.forEach(function(x,j){x.classList.toggle('on',j===i);});}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
